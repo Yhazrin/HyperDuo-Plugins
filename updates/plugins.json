@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "plugins": [
+    {
+      "id": "gallery",
+      "versionCode": 3,
+      "versionName": "1.0.2",
+      "downloadUrl": "https://github.com/Yhazrin/HyperDuo-Plugins/releases/download/v1.0.2-alpha.1/HyperDuo-Gallery-1.0.2.apk"
+    },
+    {
+      "id": "airpods",
+      "versionCode": 3,
+      "versionName": "1.0.2",
+      "downloadUrl": "https://github.com/Yhazrin/HyperDuo-Plugins/releases/download/v1.0.2-alpha.1/HyperDuo-AirPods-1.0.2.apk"
+    },
+    {
+      "id": "standby",
+      "versionCode": 3,
+      "versionName": "1.0.2",
+      "downloadUrl": "https://github.com/Yhazrin/HyperDuo-Plugins/releases/download/v1.0.2-alpha.1/HyperDuo-Standby-1.0.2.apk"
+    }
+  ]
+}

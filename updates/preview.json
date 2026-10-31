@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "channel": "preview",
+  "packageName": "local.duodesktop",
+  "versionCode": 179,
+  "versionName": "0.5.0-dev.179",
+  "publishedAt": "2026-10-31T10:03:13.888150+00:00",
+  "notes": "软件更新设置页、24小时启动目录检查、下载与系统安装确认；修正常规状态栏资源明暗表、辅助图标尺寸和着色竞争，补原包VPN资源；包含177玻璃横向裁剪修复。新增Wi-Fi四档来自iOS CoreGlyphs原CAR变量层，经原CoreUI按SystemStatusUI参数原生导出；未自绘。电池/蜂窝整体适配仍继续。开发签名预览版。",
+  "downloadUrl": "https://github.com/Yhazrin/HyperDuo-Plugins/releases/download/v0.5.0-dev.179/HyperDuo-core-179.apk",
+  "sha256": "70fc1cace08dfcc77f0419c45e591da14d51c138cb99a1b83e2aff01a30ccfa5",
+  "bytes": 126964511,
+  "signingCertificateSha256": [
+    "80c65ffe9250d76cc39f9285891112eeae3dadd246e04e929b93cd7d83e02dca"
+  ]
+}
