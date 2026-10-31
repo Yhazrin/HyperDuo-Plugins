@@ -6,9 +6,9 @@
     </queries>
     <application
         android:label="HyperDuo · AirPods"
-        android:icon="@android:drawable/ic_media_play"
+       
         android:theme="@style/Theme.HyperDuoPlugin"
-        android:allowBackup="false">
+        android:allowBackup="false" android:icon="@mipmap/plugin_airpods_launcher" android:roundIcon="@mipmap/plugin_airpods_launcher">
         <meta-data android:name="io.github.hyperduo.plugin.ID" android:value="airpods" />
         <meta-data android:name="io.github.hyperduo.plugin.API_VERSION" android:value="1" />
         <meta-data android:name="io.github.hyperduo.plugin.HOST_MIN_VERSION" android:value="171" />

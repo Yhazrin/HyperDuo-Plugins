@@ -35,3 +35,7 @@ JDK21、AndroidSDK35：
 ## 许可
 
 参见 LICENSE、LICENSES 与源码文件头。资源来源和约束以各模块说明为准。
+
+### 1.0.2 alpha · 家族图标
+
+三个插件采用 HyperDuo 家族新图标，纯白背景，包含 Adaptive 与 legacy 启动图标；设置和功能保持独立。

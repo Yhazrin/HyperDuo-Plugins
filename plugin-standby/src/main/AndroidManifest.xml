@@ -19,7 +19,7 @@
 
  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
  <queries><package android:name="local.duodesktop"/><package android:name="com.miui.gallery"/><provider android:authorities="com.miui.gallery.widget"/></queries>
- <application android:label="HyperDuo 待机" android:theme="@style/Theme.HyperDuoPlugin" android:allowBackup="false">
+ <application android:label="HyperDuo 待机" android:theme="@style/Theme.HyperDuoPlugin" android:allowBackup="false" android:icon="@mipmap/plugin_standby_launcher" android:roundIcon="@mipmap/plugin_standby_launcher">
   <meta-data android:name="io.github.hyperduo.plugin.ID" android:value="standby"/>
   <meta-data android:name="io.github.hyperduo.plugin.API_VERSION" android:value="1"/>
   <meta-data android:name="io.github.hyperduo.plugin.HOST_MIN_VERSION" android:value="171"/>
