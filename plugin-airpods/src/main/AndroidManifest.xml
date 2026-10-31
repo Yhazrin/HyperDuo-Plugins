@@ -1,0 +1,32 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <queries>
+        <package android:name="local.duodesktop" />
+        <package android:name="com.xiaomi.bluetooth" />
+        <package android:name="com.android.settings" />
+    </queries>
+    <application
+        android:label="HyperDuo · AirPods"
+        android:icon="@android:drawable/ic_media_play"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar"
+        android:allowBackup="false">
+        <meta-data android:name="io.github.hyperduo.plugin.ID" android:value="airpods" />
+        <meta-data android:name="io.github.hyperduo.plugin.API_VERSION" android:value="1" />
+        <meta-data android:name="io.github.hyperduo.plugin.HOST_MIN_VERSION" android:value="171" />
+        <provider
+            android:name="io.github.yixing233.hyperduo.AirPodsPluginProvider"
+            android:authorities="${applicationId}.config"
+            android:exported="true" />
+        <activity
+            android:name="io.github.yixing233.hyperduo.AirPodsSettingsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="io.github.hyperduo.plugin.SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

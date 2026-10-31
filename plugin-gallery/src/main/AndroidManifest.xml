@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="local.duodesktop.MANAGE_PLUGINS"/>
+    <queries>
+        <package android:name="local.duodesktop"/>
+        <package android:name="com.miui.personalassistant"/>
+        <package android:name="com.miui.home"/>
+        <package android:name="com.miui.gallery"/>
+    </queries>
+    <application android:label="HyperDuo 照片组件" android:allowBackup="false" android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        <meta-data android:name="io.github.hyperduo.plugin.ID" android:value="gallery"/>
+        <meta-data android:name="io.github.hyperduo.plugin.API_VERSION" android:value="1"/>
+        <meta-data android:name="io.github.hyperduo.plugin.HOST_MIN_VERSION" android:value="171"/>
+        <activity android:name=".GallerySettingsActivity" android:exported="true">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+            <intent-filter><action android:name="io.github.hyperduo.plugin.SETTINGS"/><category android:name="android.intent.category.DEFAULT"/></intent-filter>
+        </activity>
+        <!-- call() validates its narrow reader or signature writer per method. -->
+        <provider android:name=".GalleryConfigProvider" android:authorities="local.hyperduo.gallery.config" android:exported="true" android:writePermission="local.duodesktop.MANAGE_PLUGINS"/>
+    </application>
+</manifest>

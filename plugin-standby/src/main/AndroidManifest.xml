@@ -1,0 +1,47 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <uses-permission android:name="android.permission.INTERNET"/>
+ <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+ <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+ <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+ <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+ <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+ <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
+ <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30"/>
+ <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30"/>
+ <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" android:maxSdkVersion="30"/>
+ <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+ <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+ <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation"/>
+ <uses-permission android:name="moe.shizuku.manager.permission.API_V23"/>
+ <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+
+ <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+ <queries><package android:name="local.duodesktop"/><package android:name="com.miui.gallery"/><provider android:authorities="com.miui.gallery.widget"/></queries>
+ <application android:label="HyperDuo 待机" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:allowBackup="false">
+  <meta-data android:name="io.github.hyperduo.plugin.ID" android:value="standby"/>
+  <meta-data android:name="io.github.hyperduo.plugin.API_VERSION" android:value="1"/>
+  <meta-data android:name="io.github.hyperduo.plugin.HOST_MIN_VERSION" android:value="171"/>
+  <activity android:name="local.hyperduo.standby.SettingsActivity" android:exported="true">
+   <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+   <intent-filter><action android:name="io.github.hyperduo.plugin.SETTINGS"/><category android:name="android.intent.category.DEFAULT"/></intent-filter>
+  </activity>
+  <provider android:name="local.hyperduo.standby.StandbyConfigProvider" android:authorities="local.hyperduo.standby.config" android:exported="true" android:permission="local.duodesktop.MANAGE_PLUGINS"/>
+ <activity android:name="local.duostandby.MainActivity" android:exported="false" android:resizeableActivity="true" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+ <activity android:name="local.duostandby.GlowActivity" android:exported="false" android:resizeableActivity="true" android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|density" android:showWhenLocked="true" android:turnScreenOn="true" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+ <receiver android:name="local.duostandby.GlowAlarmReceiver" android:exported="false"/>
+ <service android:name="local.duostandby.StandByTriggerService" android:exported="false" android:foregroundServiceType="specialUse">
+  <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="standby foldable hinge pose trigger"/>
+ </service>
+ <service android:name="local.duostandby.StandByNotificationListener" android:exported="true" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+  <intent-filter><action android:name="android.service.notification.NotificationListenerService"/></intent-filter>
+ </service>
+ <service android:name="local.duostandby.StandByDreamService" android:exported="true" android:permission="android.permission.BIND_DREAM_SERVICE">
+  <intent-filter><action android:name="android.service.dreams.DreamService"/></intent-filter>
+  <meta-data android:name="android.service.dream" android:resource="@xml/hyperduo_standby_dream"/>
+ </service>
+ <provider android:name="rikka.shizuku.ShizukuProvider" android:authorities="${applicationId}.shizuku" android:exported="true" android:multiprocess="false" android:permission="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+ <meta-data android:name="moe.shizuku.client.V3_SUPPORT" android:value="true"/>
+ </application>
+</manifest>
