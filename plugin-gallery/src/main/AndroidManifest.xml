@@ -6,7 +6,7 @@
         <package android:name="com.miui.home"/>
         <package android:name="com.miui.gallery"/>
     </queries>
-    <application android:label="HyperDuo 照片组件" android:allowBackup="false" android:theme="@android:style/Theme.Material.Light.NoActionBar">
+    <application android:label="HyperDuo 照片组件" android:allowBackup="false" android:theme="@style/Theme.HyperDuoPlugin">
         <meta-data android:name="io.github.hyperduo.plugin.ID" android:value="gallery"/>
         <meta-data android:name="io.github.hyperduo.plugin.API_VERSION" android:value="1"/>
         <meta-data android:name="io.github.hyperduo.plugin.HOST_MIN_VERSION" android:value="171"/>

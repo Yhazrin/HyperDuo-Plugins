@@ -1,6 +1,8 @@
 # HyperDuo Plugins
 
-三个可独立安装的插件，也可由 HyperDuo 171 起的「设置 → 插件库」统一管理。
+三个可独立安装的插件，由 [Yhazrin](https://github.com/Yhazrin) 维护。也可由 [HyperDuo 主项目](https://github.com/Yhazrin/HyperDuo) 的插件库统一管理。
+
+1.0.1 的设置页统一使用 MIUIX，适配系统安全区、横屏挖孔和深浅色。搭配 HyperDuo 172 时，已安装插件会出现在导航栏；AirPods 与相册开关可直接在主程序设置。
 
 | 插件 | 安装包 | 运行条件 |
 |---|---|---|
@@ -25,10 +27,10 @@ JDK21、AndroidSDK35：
 ./gradlew :plugin-gallery:assembleDebug :plugin-airpods:assembleDebug :plugin-standby:assembleDebug
 ```
 
-独立APK不依赖主程序的源码或运行进程。`:plugin-api`仅含版本、设置入口和同签名迁移协议，没有远程DEX或脚本加载。
+独立APK不依赖主程序的源码或运行进程。`:plugin-api`仅含版本、设置入口和同签名迁移协议；`:plugin-ui`提供静态编译的 MIUIX 设置组件。没有远程 DEX 或脚本加载。
 统一管理要求与宿主同签名；从源码自行构建者应给宿主和插件使用同一签名。独立使用不要求安装宿主。
 
-主程序系统适配仍由HyperDuo负责，插件不重复写其共享native几何位点。本次只做集中编译、签名和APK边界检查，尚未完成新APK的真机迁移/功能验收。
+主程序系统适配仍由HyperDuo负责，插件不重复写其共享native几何位点。1.0.0 已完成独立设置与显式配置迁移检查，以及 Standby 日期/电量渲染和长按编辑。系统 Hook 效果按实际作用域与连接会话另行验收。
 
 ## 许可
 

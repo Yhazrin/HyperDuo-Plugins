@@ -7,7 +7,7 @@
     <application
         android:label="HyperDuo · AirPods"
         android:icon="@android:drawable/ic_media_play"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar"
+        android:theme="@style/Theme.HyperDuoPlugin"
         android:allowBackup="false">
         <meta-data android:name="io.github.hyperduo.plugin.ID" android:value="airpods" />
         <meta-data android:name="io.github.hyperduo.plugin.API_VERSION" android:value="1" />

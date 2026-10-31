@@ -27,6 +27,16 @@ public final class AirPodsPluginProvider extends ContentProvider {
             if(!allowed)throw new SecurityException("AirPods hosts only");
             return AirPodsPluginConfig.snapshot(context);
         }
+        if ("config".equals(method) || "set".equals(method)) {
+            enforceHost(context);
+            if ("set".equals(method)) {
+                if (extras == null || !extras.containsKey(AirPodsPluginConfig.ENABLED))
+                    throw new IllegalArgumentException("Missing AirPods enabled preference");
+                AirPodsPluginConfig.preferences(context).edit().putBoolean(AirPodsPluginConfig.ENABLED,
+                        extras.getBoolean(AirPodsPluginConfig.ENABLED)).apply();
+            }
+            return AirPodsPluginConfig.snapshot(context);
+        }
         if (PluginContract.METHOD_IMPORT_CONFIG.equals(method)) {
             enforceHost(context);
             Bundle config=extras==null?null:extras.getBundle(PluginContract.EXTRA_CONFIG);
